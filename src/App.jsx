@@ -8,7 +8,7 @@ import Hotels from "./pages/Hotels";
 import Itineraries from "./pages/Itineraries";
 import MyTrips from "./pages/MyTrips";
 import Navbar from "./components/Navbar";
-import TripCard from "./components/TripCard";
+import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
 
 function App() {

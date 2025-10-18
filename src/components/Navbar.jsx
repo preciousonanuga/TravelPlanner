@@ -26,42 +26,42 @@ export default function Navbar() {
         </h1>
       </div>
 
-      <div className="justify-center flex w-250 gap-4 bg-amber-500 px-0.5 py-3 mx-auto rounded-4xl w hover:bg-blue-400 scale-70 hover:scale-75 transition-transform">
+      <div className="justify-center flex w-320 gap-8 tracking-wider leading-tight bg-amber-500 px-0.5 py-3 mx-auto rounded-4xl w hover:bg-blue-400 scale-70 hover:scale-65 transition-transform">
         <Link
           to="/"
           className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
-          🔍Destinations
+          🔍 Destinations
         </Link>
         <Link
           to="/attractions"
           className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
-          🏙Attractions
+          🏙 Attractions
         </Link>
         <Link
           to="/flights"
           className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
-          🛫Flights
+          🛫 Flights
         </Link>
         <Link
           to="/hotels"
           className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
-          🏨Hotels
+          🏨 Hotels
         </Link>
         <Link
           to="/itineraries"
           className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
-          📆Itineraries
+          📆 Itineraries
         </Link>
         <Link
           to="/mytrips"
           className="text-xl text-blue-800 font-bold size- px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
-          💾My Trips
+          💾 My Trips
         </Link>
       </div>
 
