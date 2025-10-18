@@ -69,7 +69,7 @@ export function AmadeusDestinations() {
           {/* Image placeholder */}
           <div className="relative overflow-hidden">
             <img
-              src={https://source.unsplash.com/400x250/?${dest.name}}
+              src={`https://source.unsplash.com/400x250/?${dest.name}`}
               alt={dest.name}
               className="w-full h-56 object-cover transition-transform duration-300 hover:scale-110"
             />
