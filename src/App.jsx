@@ -11,12 +11,13 @@ import Navbar from "./components/Navbar";
 import SearchBar from "./components/SearchBar";
 import Footer from "./components/Footer";
 
+
 function App() {
   return (
-    <>
+    <div className="bg-amber-100 min-h-screen w-full">
       <Navbar />
       <Footer />
-    </>
+    </div>
   );
 }
 

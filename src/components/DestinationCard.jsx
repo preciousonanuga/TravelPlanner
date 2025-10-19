@@ -22,7 +22,7 @@ export function AmadeusDestinations() {
   useEffect(() => {
     const fetchAmadeusData = async () => {
       try {
-        // 1️⃣ Get access token
+        // Get access token
         const tokenResponse = await fetch(
           "https://test.api.amadeus.com/v1/security/oauth2/token",
           {
@@ -66,7 +66,6 @@ export function AmadeusDestinations() {
           key={dest.id}
           className="relative bg-white shadow-lg rounded-lg overflow-hidden w-full sm:w-[45%] lg:w-[30%] flex flex-col transform transition duration-300 hover:scale-105 hover:shadow-xl"
         >
-          {/* Image placeholder */}
           <div className="relative overflow-hidden">
             <img
               src={`https://source.unsplash.com/400x250/?${dest.name}`}

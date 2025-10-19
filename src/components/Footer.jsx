@@ -7,7 +7,7 @@ export default function Footer() {
         ✈Travel<span className="text-amber-500">Padi</span>
       </h1>
       <span className="text-gray-500 text-sm">
-        &copy; {new Date().getFullYear()} TravelPadi. All rights reserved.
+        &copy; 2025 TravelPadi. All rights reserved.
       </span>
     </footer>
   );

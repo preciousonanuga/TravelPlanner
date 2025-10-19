@@ -26,7 +26,7 @@ export default function Navbar() {
         <div>
             <Link
                 to="/mytrips"
-                className="text-lg sm:text-xl text-amber-500 font-medium size- px-2 py-2 rounded-3xl hover:bg-amber-500 hover:text-white"
+                className="text-lg sm:text-xl shadow-md shadow-blue-300 text-blue-600 font-medium size- px-2 py-2 rounded-3xl hover:bg-amber-500 hover:text-white"
             >
               💾 My Trips
             </Link>
