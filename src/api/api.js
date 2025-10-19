@@ -1,66 +1,60 @@
-// src/api.js
-const AMADEUS_AUTH_URL = "https://test.api.amadeus.com/v1/security/oauth2/token";
-const AMADEUS_API_URL = "https://test.api.amadeus.com/v1/reference-data/locations";
+const API_BASE = "https://test.api.amadeus.com";
 
-/**
- * Get a new access token from Amadeus
- */
-export async function getAccessToken(clientId, clientSecret) {
-  const response = await fetch(AMADEUS_AUTH_URL, {
+let accessToken = null;
+
+const getAccessToken = async () => {
+  if (accessToken) return accessToken;
+
+  const response = await fetch(`${API_BASE}/v1/security/oauth2/token`, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({
       grant_type: "client_credentials",
-      client_id: clientId,
-      client_secret: clientSecret,
+      client_id: import.meta.env.VITE_AMADEUS_CLIENT_ID,
+      client_secret: import.meta.env.VITE_AMADEUS_CLIENT_SECRET,
     }),
   });
 
   const data = await response.json();
-  return data.access_token;
-}
+  accessToken = data.access_token;
+  return accessToken;
+};
 
-/**
- * Fetch destinations (cities) using the token
- */
-export async function getDestinations(accessToken, keyword = "paris") {
-  const response = await fetch(
-    ${AMADEUS_API_URL}?subType=CITY&keyword=${keyword},
+// 🔍 Search Cities
+export const searchCities = async (keyword) => {
+  const token = await getAccessToken();
+  const res = await fetch(
+    `${API_BASE}/v1/reference-data/locations?subType=CITY&keyword=${keyword}`,
     {
-      headers: {
-        Authorization: Bearer ${accessToken},
-      },
+      headers: { Authorization: `Bearer ${token}` },
     }
   );
-  const data = await response.json();
+  const data = await res.json();
   return data.data || [];
-}
+};
 
-// // Getting destinations
-// export async function getDestinations(destinations) {
+// 🏨 Search Hotels in a City
+export const searchHotels = async (cityCode) => {
+  const token = await getAccessToken();
+  const res = await fetch(
+    `${API_BASE}/v1/reference-data/locations/hotels/by-city?cityCode=${cityCode}`,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+  const data = await res.json();
+  return data.data || [];
+};
 
-//     const response = await fetch(apiURL, {
-//         'Content-Type': 'application/json',
-//         authorization: `Bearer 17|OAkvh0PYN4VRJL25blablablablablabla1704`
-//     });
-
-//     if(!response.ok) {
-//         throw new Error("Server might be down for now!");
-//     }
-//     return response.json();
-// }
-
-// // Saving destinations
-// export async function saveDestinations(MyTrips) {
-
-//     const response = await fetch (apiURL, {
-//         method: 'POST',
-//         headers: {
-//             'Content-Type': 'application/json',
-//             authorization: `Bearer 17|OAkvh0PYN4VRJL25blablablablablabla`,
-//         },
-//         body: JSON.stringify();
-
-//     })
-// }
-
+// ✈️ Search Flights (mock example, just for demo)
+export const searchFlights = async (origin, destination, date) => {
+  const token = await getAccessToken();
+  const res = await fetch(
+    `${API_BASE}/v2/shopping/flight-offers?originLocationCode=${origin}&destinationLocationCode=${destination}&departureDate=${date}&adults=1&max=3`,
+    {
+      headers: { Authorization: `Bearer ${token}` },
+    }
+  );
+  const data = await res.json();
+  return data.data || [];
+};
