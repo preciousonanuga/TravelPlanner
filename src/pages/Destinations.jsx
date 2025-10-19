@@ -15,10 +15,30 @@ export default function Destinations() {
           placeholder='🔍 Search for destinations...'
           className='w-full flex p-2 bg-amber-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-blye-500'
         />
-
-        <DestinationCard />
+        <div className='mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+          <DestinationCard 
+            name="Paris, France"
+            description="The city of lights, known for its art, fashion, and iconic landmarks like the Eiffel Tower."
+            imageUrl="https://example.com/paris.jpg"
+          />
+          <DestinationCard 
+            name="Tokyo, Japan"
+            description="A bustling metropolis blending tradition and modernity, famous for its cuisine and technology."
+            imageUrl="https://example.com/tokyo.jpg"
+          />
+          <DestinationCard 
+            name="New York City, USA"
+            description="The city that never sleeps, offering world-class entertainment, dining, and cultural experiences."
+            imageUrl="https://example.com/nyc.jpg"
+          />
+          <DestinationCard 
+            name="Sydney, Australia"
+            description="Known for its stunning harbor, iconic Opera House, and beautiful beaches."
+            imageUrl="https://example.com/sydney.jpg"
+          />
+          {/* Add more DestinationCards as needed */}
+        </div>
       </div>
-
     </>
   );
 }
