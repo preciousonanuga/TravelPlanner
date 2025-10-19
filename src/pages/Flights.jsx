@@ -11,10 +11,10 @@ export default function FlightOffers() {
           </p>
         </div>
 
-        <div className='bg-white text-gray-800 flex flex-col gap-6 rounded-xl border shadow-lg max-w-5xl mx-auto p-8'>
+        <div className='bg-white text-gray-800 flex flex-col gap-6 rounded-xl border shadow-lg max-w-2xl w-full mx-auto p-4 sm:p-8'>
           {/* Card Header */}
           <div className='flex items-center mb-2'>
-            <h3 className='text-lg font-semibold'>Search Flights</h3>
+            <h3 className='text-lg sm:text-xl font-semibold'>Search Flights</h3>
           </div>
           {/* Grid for fields */}
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-4'>
@@ -37,7 +37,7 @@ export default function FlightOffers() {
           </div>
           {/* Button */}
           <div className='flex justify-center'>
-            <button className='bg-blue-600 text-white text-lg font-semibold px-10 py-3 rounded-lg transition w-2/3 hover:bg-blue-500'>
+            <button className='bg-blue-600 text-white text-lg font-semibold px-6 py-3 rounded-lg transition w-full sm:w-2/3 hover:bg-blue-500'>
               ✈ Search Flights
             </button>
           </div>

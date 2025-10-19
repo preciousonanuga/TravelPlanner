@@ -10,8 +10,7 @@ import Itineraries from "../pages/Itineraries";
 import MyTrips from "../pages/MyTrips";
 import ExplorePage from "./DetailsPage";
 import DestinationCard from "../components/DestinationCard";
-import TripCard from "../components/TripCard";
-import Footer from "../components/Footer";
+import SearchBar from "../components/SearchBar";
 
 export default function Navbar() {
   useEffect(() => {
@@ -24,9 +23,17 @@ export default function Navbar() {
         <h1 className="text-blue-700 text-2xl font-bold">
           ✈Travel<span className="text-amber-500">Padi</span>
         </h1>
+        <div>
+            <Link
+                to="/mytrips"
+                className="text-xl text-blue-800 font-bold size- px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
+            >
+              💾 My Trips
+            </Link>
+        </div>
       </div>
 
-      <div className="justify-center flex w-320 gap-8 tracking-wider leading-tight bg-amber-500 px-0.5 py-3 mx-auto rounded-4xl w hover:bg-blue-400 scale-70 hover:scale-65 transition-transform">
+      <div className="justify-center flex w-320 gap-8 tracking-wider leading-tight bg-blue-400 px-0.5 py-3 mx-auto rounded-4xl w hover:bg-amber-500 scale-70 hover:scale-65 transition-transform">
         <Link
           to="/"
           className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
@@ -56,12 +63,6 @@ export default function Navbar() {
           className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
           📆 Itineraries
-        </Link>
-        <Link
-          to="/mytrips"
-          className="text-xl text-blue-800 font-bold size- px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
-        >
-          💾 My Trips
         </Link>
       </div>
 
