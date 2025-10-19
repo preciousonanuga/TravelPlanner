@@ -4,10 +4,10 @@ export default function Itineraries() {
   return (
     <>
       <div className='bg-amber-100 min-h-screen w-full p-6'>
-        <h1 className='text-4xl font-medium p-2 text-amber-600 text-center'>Find Accomodation</h1>
+        <h1 className='text-4xl font-medium p-2 text-amber-600 text-center'>Build Your Perfect Itinerary</h1>
         <div className='mx-auto justify-center p-4 max-w-2xl'>
           <p className='text-xl font-light mb-4 text-center'>
-            Discover hotels, resorts, and unique stays for your destination. Filter by amenities, price range, and location to find your perfect place to stay.
+            Organize your trip day by day. Add custom activities, set times, and include notes to create a detailed plan for your adventure. Drag and drop to reorder activities.
           </p>
         </div>
 
