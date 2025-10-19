@@ -19,48 +19,48 @@ export default function Navbar() {
 
   return (
     <Router>
-      <div className="flex items-center justify-between px-3 py-6 mb-5 shadow sm: md:">
+      <div className="flex items-center justify-between px-3 py-6 mb-5 shadow sm:w-max-1/3 md:">
         <h1 className="text-blue-700 text-2xl font-bold">
           ✈Travel<span className="text-amber-500">Padi</span>
         </h1>
         <div>
             <Link
                 to="/mytrips"
-                className="text-xl text-blue-800 font-bold size- px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
+                className="text-lg sm:text-xl text-amber-500 font-medium size- px-2 py-2 rounded-3xl hover:bg-amber-500 hover:text-white"
             >
               💾 My Trips
             </Link>
         </div>
       </div>
 
-      <div className="justify-center flex w-320 gap-8 tracking-wider leading-tight bg-blue-400 px-0.5 py-3 mx-auto rounded-4xl w hover:bg-amber-500 scale-70 hover:scale-65 transition-transform">
+      <div className="justify-center flex w-320 gap-8 tracking-wider leading-tight bg-blue-500 px-0.5 py-3 mx-auto rounded-4xl w hover:bg-blue-400 scale-70 hover:scale-65 transition-transform">
         <Link
           to="/"
-          className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
+          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
           🔍 Destinations
         </Link>
         <Link
           to="/attractions"
-          className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
+          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
           🏙 Attractions
         </Link>
         <Link
           to="/flights"
-          className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
+          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
           🛫 Flights
         </Link>
         <Link
           to="/hotels"
-          className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
+          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
           🏨 Hotels
         </Link>
         <Link
           to="/itineraries"
-          className="text-xl text-blue-800 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
+          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
         >
           📆 Itineraries
         </Link>
