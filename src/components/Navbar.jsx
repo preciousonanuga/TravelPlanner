@@ -1,79 +1,52 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
-import Attractions from "../pages/Attractions";
-import Destinations from "../pages/Destinations";
-import FlightOffers from "../pages/Flights";
-import Hotels from "../pages/Hotels";
-import Itineraries from "../pages/Itineraries";
-import MyTrips from "../pages/MyTrips";
-import ExplorePage from "./DetailsPage";
-import DestinationCard from "../components/DestinationCard";
-import SearchBar from "../components/SearchBar";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
+  const location = useLocation();
+
   useEffect(() => {
-    document.body.className = "bg-amber-100";
-  });
+    document.body.className = "bg-gradient-to-b from-white via-gray-50 to-gray-100";
+  }, []);
+
+  const navLinks = [
+    { path: "/", label: "🔍 Destinations" },
+    { path: "/attractions", label: "🏙 Attractions" },
+    { path: "/flights", label: "🛫 Flights" },
+    { path: "/hotels", label: "🏨 Hotels" },
+    { path: "/itineraries", label: "📆 Itineraries" },
+  ];
 
   return (
-    <Router>
-      <div className="flex items-center justify-between px-3 py-6 mb-5 shadow sm:w-max-1/3 md:">
-        <h1 className="text-blue-700 text-2xl font-bold">
-          ✈Travel<span className="text-amber-500">Padi</span>
+    <header className="sticky top-0 z-50 bg-white shadow-md">
+      {/* Top Bar (Logo and MyTrips) */}
+      <div className="flex items-center justify-between px-4 sm:px-8 py-4">
+        <h1 className="text-blue-700 text-2xl font-extrabold">
+          ✈ Travel<span className="text-amber-500">Padi</span>
         </h1>
-        <div>
-            <Link
-                to="/mytrips"
-                className="text-lg sm:text-xl shadow-md shadow-blue-300 text-blue-600 font-medium size- px-2 py-2 rounded-3xl hover:bg-amber-500 hover:text-white"
-            >
-              💾 My Trips
-            </Link>
-        </div>
-      </div>
-
-      <div className="justify-center flex w-320 gap-8 tracking-wider leading-tight bg-blue-500 px-0.5 py-3 mx-auto rounded-4xl w hover:bg-blue-400 scale-70 hover:scale-65 transition-transform">
         <Link
-          to="/"
-          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
+          to="/mytrips"
+          className="text-base sm:text-lg bg-blue-100 text-blue-700 font-medium px-4 py-2 rounded-full hover:bg-amber-500 hover:text-white transition-all shadow-sm"
         >
-          🔍 Destinations
-        </Link>
-        <Link
-          to="/attractions"
-          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
-        >
-          🏙 Attractions
-        </Link>
-        <Link
-          to="/flights"
-          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
-        >
-          🛫 Flights
-        </Link>
-        <Link
-          to="/hotels"
-          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
-        >
-          🏨 Hotels
-        </Link>
-        <Link
-          to="/itineraries"
-          className="text-xl text-blue-900 font-bold px-4 py-3 rounded-3xl hover:bg-amber-500 hover:text-white"
-        >
-          📆 Itineraries
+          💾 My Trips
         </Link>
       </div>
 
-      <Routes>
-        <Route path="/" element={<Destinations />} />
-        <Route path="/attractions" element={<Attractions />} />
-        <Route path="/flights" element={<FlightOffers />} />
-        <Route path="/hotels" element={<Hotels />} />
-        <Route path="/itineraries" element={<Itineraries />} />
-        <Route path="/mytrips" element={<MyTrips />} />
-      </Routes>
-    </Router>
+      {/* Nav Links */}
+      <nav className="flex flex-wrap justify-center gap-3 sm:gap-6 py-3 bg-blue-500">
+        {navLinks.map((link) => (
+          <Link
+            key={link.path}
+            to={link.path}
+            className={`text-sm sm:text-lg font-semibold px-4 py-2 rounded-3xl transition-all duration-200 ${
+              location.pathname === link.path
+                ? "bg-amber-500 text-white shadow-md"
+                : "text-blue-50 hover:bg-blue-400"
+            }`}
+          >
+            {link.label}
+          </Link>
+        ))}
+      </nav>
+    </header>
   );
 }
