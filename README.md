@@ -1,8 +1,9 @@
 🌍 TravelPadi – Your Smart Travel Planner
+Explore destinations, flights, and hotels — all in one place.
 
-TravelPadi is a responsive, user-friendly travel planning web application that helps users discover destinations, explore attractions, find accommodations, and build personalized itineraries — all in one place.
+TravelPadi is a simple responsive, user-friendly travel planning web application that helps users discover destinations, explore attractions, find accommodations, and build personalized itineraries — all in one place.
 
-Powered by live travel data from public APIs, TravelPadi empowers travelers to plan, save, edit, and manage their trips effortlessly.
+Powered by live travel data from Amadeus public API, TravelPadi empowers travelers to plan, save, edit, and manage their trips effortlessly.
 
 🚀 Features
 
@@ -22,27 +23,25 @@ Save itineraries for later, update plans on the go, and easily manage multiple t
 Enjoy a seamless experience across desktops, tablets, and mobile devices.
 
 🌐 Live Data Integration
-Fetches live travel data from a public API to keep destination info up to date.
+Fetches live travel data from Amadeus API to keep destination info up to date.
 
 🧭 Tech Stack
 
 Frontend:
 
-React.js (with Hooks & Context API)
+React.js (with Hooks)
 
 Tailwind CSS (for responsive UI)
 
-Axios (for API requests)
-
 React Router (for navigation)
 
-Backend (optional, if applicable):
+API (Amadeus API):
 
 Local Storage (for user data and itineraries)
 
 API Integration:
 
-Public travel APIs (e.g., Amadeus or RapidAPI Travel endpoints)
+Public travel APIs (e.g., Amadeus Travel Destinations, FligtOffers and Hotel accomodation endpoints)
 
 🧠 Future Enhancements
 
@@ -76,7 +75,7 @@ This project is licensed under the MIT License
 
 💖 Acknowledgements
 
-Travel APIs for real-time destination data
+Amadeus APIs for real-time destination data
 
 Open-source contributors and designers
 
