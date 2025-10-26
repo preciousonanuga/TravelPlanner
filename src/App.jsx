@@ -9,6 +9,7 @@ import Itineraries from "./pages/Itineraries";
 import MyTrips from "./pages/MyTrips";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import DetailsPage from "./components/DetailsPage";
 
 
 function App() {
@@ -21,20 +22,9 @@ function App() {
         {/* Main Content */}
         <main className="flex-grow px-4 sm:px-8 lg:px-16 py-8">
           <Routes>
-            <Route
-              path="/"
-              element={
-                <div className="text-center py-20">
-                  <h1 className="text-4xl font-bold text-blue-700">
-                    ✈ Welcome to Travel<span className="text-amber-500">Padi</span>
-                  </h1>
-                  <p className="text-gray-600 mt-4 text-lg">
-                    Explore destinations, flights, and hotels — all in one place.
-                  </p>
-                </div>
-              }
-            />
+            <Route path="/" element={<Destinations />} />
             <Route path="/destinations" element={<Destinations />} />
+            <Route path="/destinations/:id" element={<DetailsPage />} />
             <Route path="/attractions" element={<Attractions />} />
             <Route path="/flights" element={<FlightOffers />} />
             <Route path="/hotels" element={<Hotels />} />
